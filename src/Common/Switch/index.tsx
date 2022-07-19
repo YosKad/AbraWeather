@@ -16,7 +16,7 @@ const Switch: React.FC <SwitchProps> = ({id , value , onChange , left , right}) 
               />
             <S.SwitchLeftThumbWrapper>{left}</S.SwitchLeftThumbWrapper>
             <S.SwitchRightThumbWrapper>{right}</S.SwitchRightThumbWrapper>
-            <S.SwitchToggle></S.SwitchToggle>
+            <S.SwitchToggle htmlFor={id} ></S.SwitchToggle>
         </S.SwitchWrapper>
 
     </>

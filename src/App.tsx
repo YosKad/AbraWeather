@@ -1,9 +1,9 @@
-import React from 'react';
+import React , {Component , useState} from 'react';
 import styled from 'styled-components';
 import { IconFacebookLogo , IconDarkMoon , IconDarkSun} from "./Common/Icon";
 import Button from "./Common/Button";
 import Switch from "./Common/Switch";
-import { useState } from 'react';
+
 
 
 const Container = styled.div`
@@ -17,7 +17,8 @@ const ButtonStyle = styled.div`
   `
 
 const App: React.FC= () => {
-  const [toggle, setToggle] = useState<boolean>(false)
+  const [toggle, setToggle] = useState<boolean>(true);
+  console.log(toggle)
   return (
 
   <Container>
