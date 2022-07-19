@@ -1,26 +1,48 @@
 import React from 'react';
 import styled from 'styled-components';
-import './App.css';
-import { IconFacebookLogo} from "./Common/Icon"
-import Button from "./Common/Button"
+import { IconFacebookLogo , IconDarkMoon , IconDarkSun} from "./Common/Icon";
+import Button from "./Common/Button";
+import Switch from "./Common/Switch";
+import { useState } from 'react';
 
 
-interface Props {
-  
-}
-const StyledDiv = styled.p<Props>`
-  width: 500px;
-  height: 500px;
-  background-color: aqua;
-`;
+const Container = styled.div`
+  background-color: #b7b7b7;
+  padding: 10px;
+`
+const ButtonStyle = styled.div`
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  `
 
 const App: React.FC= () => {
-  return <>
-  <Button > Test </Button>
-  <IconFacebookLogo />
-  <p> Hello </p>
-  </>;
+  const [toggle, setToggle] = useState<boolean>(false)
+  return (
+
+  <Container>
+<Button onClick={() => console.log("clicked")} variant="primary" disabled>
+  test </Button>
+<Button onClick={() => console.log("clicked")} variant="ghost">
+   test </Button>
+<Button onClick={() => console.log("clicked")} variant="link">
+  <ButtonStyle><IconFacebookLogo/>Login with facebook</ButtonStyle> 
+   </Button>
+<Button onClick={() => console.log("clicked")} variant="white">
+   test </Button>
   
+   <Switch
+        id={"degree-id"}
+        value={toggle}
+        left={<IconDarkMoon />}
+        right={<IconDarkSun />}
+        onChange={() => {
+          setToggle(!toggle);
+        }}
+      ></Switch>
+  </Container>
+  
+);
 };
 
 export default App;

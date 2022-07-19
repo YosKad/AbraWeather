@@ -15,7 +15,7 @@ import { ReactComponent as IconLogOUt } from './Icons/log-out.svg';
 import { ReactComponent as IconMapWeater } from './Icons/map-weather.svg';
 import { ReactComponent as IconMap } from './Icons/map.svg';
 import { ReactComponent as IconMenu } from './Icons/menu.svg';
-import { ReactComponent as IconDarkMOon } from './Icons/moon-dark.svg';
+import { ReactComponent as IconDarkMoon } from './Icons/moon-dark.svg';
 import { ReactComponent as IconFlatMoon } from './Icons/moon-flat.svg';
 import { ReactComponent as IconWhiteMoon } from './Icons/moon-white.svg';
 import { ReactComponent as IconDarkSearch } from './Icons/search-dark.svg';
@@ -34,7 +34,7 @@ export {
     IconDarkSearch,
     IconWhiteMoon,
     IconFlatMoon,
-    IconDarkMOon,
+    IconDarkMoon,
     IconMenu,
     IconMap,
     IconMapWeater,
