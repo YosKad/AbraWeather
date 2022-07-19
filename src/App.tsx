@@ -1,6 +1,9 @@
 import React from 'react';
 import styled from 'styled-components';
 import './App.css';
+import { IconFacebookLogo} from "./Common/Icon"
+import Button from "./Common/Button"
+
 
 interface Props {
   
@@ -13,6 +16,8 @@ const StyledDiv = styled.p<Props>`
 
 const App: React.FC= () => {
   return <>
+  <Button > Test </Button>
+  <IconFacebookLogo />
   <p> Hello </p>
   </>;
   
