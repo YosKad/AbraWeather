@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { Theme } from "../../themes";
 import { ButtonProps } from "./types";
-import * as S from "./Styles"
+import * as S from "./styles";
 
 
 const Button: React.FC<ButtonProps> = ({

@@ -18,6 +18,7 @@ export const SwitchToggle = styled.label<Props>`
   height: 32px;
   background-color: #838baa;
   border-radius: 50%;
+
   ${(props) =>
     props.checked
       ? `
