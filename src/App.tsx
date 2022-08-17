@@ -1,61 +1,61 @@
-import React, { Component, useState } from 'react';
-import styled from 'styled-components';
+/*
+- Finish up the button Component. Add ghost/link styles. 
+  - Add disabled state
+  - Add option for icons
+
+- Try to implmenent a toggle component.
+- If you still have time, go to the innput component */
+
+import React, { Component, useState } from "react";
+import styled from "styled-components/macro";
 import { IconFacebookLogo, IconDarkMoon, IconDarkSun } from "./Common/Icon";
 import Button from "./Common/Button";
 import Switch from "./Common/Switch";
-import Input from './Common/Input';
-import customMedia from './Utils/mediaQuery';
-import Login from './Common/Pages/Login';
-
-
-
+import Input from "./Common/Input";
+import customMedia from "./Utils/mediaQuery";
+import Alert from "./Common/Alert";
 
 const Container = styled.div`
   background-color: #b7b7b7;
-  ${customMedia.greaterThan('desktop')`
-  background-color: red;
+  ${customMedia.greaterThan("desktop")`
+    background-color: red;
   `};
 
-  ${customMedia.between('tablet' , 'desktop')`
-  background-color: blue;
-  `};
-
-  ${customMedia.between('mobile' , 'tablet')`
-  background-color: green;
-  `};
-
-
-  ${customMedia.lessThan('mobile')`
-  background-color: yellow;
+  ${customMedia.between("tablet", "desktop")`
+    background-color: green;
   `};
 
   padding: 10px;
-`
+`;
 const ButtonStyle = styled.div`
   display: flex;
   gap: 8px;
   align-items: center;
-  `
-
+`;
 const App: React.FC = () => {
   const [toggle, setToggle] = useState<boolean>(true);
-  const [text, setText] = useState<String>("")
+  const [text, setText] = useState<string>("");
 
-  console.log(toggle)
+  console.log(toggle);
   return (
-      <>
     <Container>
-    
-      <Button onClick={() => console.log("clicked")} variant="primary" disabled>
-        test </Button>
+      <Button onClick={() => console.log("clicked")} disabled variant="primary">
+        test
+      </Button>
       <Button onClick={() => console.log("clicked")} variant="ghost">
-        test </Button>
+        test
+      </Button>
       <Button onClick={() => console.log("clicked")} variant="link">
-        <ButtonStyle><IconFacebookLogo />Login with facebook</ButtonStyle>
+        <ButtonStyle>
+          <IconFacebookLogo />
+          Log in with facebook
+        </ButtonStyle>
       </Button>
       <Button onClick={() => console.log("clicked")} variant="white">
-        test </Button>
-
+        test
+      </Button>
+      <p>test</p>
+      <h1>test</h1>
       <Switch
         id={"degree-id"}
         value={toggle}
@@ -67,7 +67,7 @@ const App: React.FC = () => {
       ></Switch>
 
       <Input
-        value=""
+        value={text}
         onChange={(e) => {
           setText(e.target.value);
         }}
@@ -75,9 +75,13 @@ const App: React.FC = () => {
         // error={"this is an error"}
         placeholder="6 charaters and digit numbers blabla"
       ></Input>
-
+      <p>Error</p>
+      <Alert severity="error">
+        Connection is lost. Please check
+        your connection device and try again.</Alert>
+      <p> Success</p>
+      <Alert severity="success">Tel Aviv - Jaffa has added to favorites</Alert>
     </Container>
-    <Login /></>
   );
 };
 
